@@ -9,7 +9,8 @@ public class ConfigHolder {
 
     static {
         {
-            final Pair<CommonConfig, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(CommonConfig::new);
+            final Pair<CommonConfig, ForgeConfigSpec> specPair =
+                    new ForgeConfigSpec.Builder().configure(CommonConfig::new);
             COMMON = specPair.getLeft();
             COMMON_SPEC = specPair.getRight();
         }

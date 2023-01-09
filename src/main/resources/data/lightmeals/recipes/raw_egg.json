@@ -9,9 +9,9 @@
     "item": "lightmeals:raw_egg",
     "count": 1
   },
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeRawEgg"
     }
   ]

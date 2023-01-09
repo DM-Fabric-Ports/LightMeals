@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "ingredient": {
-    "tag": "forge:raw_squid"
+    "tag": "c:raw_squid"
   },
   "result": "lightmeals:cooked_squid",
   "experience": 0.35,

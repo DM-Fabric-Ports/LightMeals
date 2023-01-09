@@ -6,9 +6,9 @@
   "result": "lightmeals:cooked_tropical_fish",
   "experience": 0.35,
   "cookingtime": 100,
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeCookedTropicalFish"
     }
   ]

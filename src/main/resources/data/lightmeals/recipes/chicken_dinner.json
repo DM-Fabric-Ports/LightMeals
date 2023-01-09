@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "forge:cooked_chicken"
+      "tag": "c:cooked_chicken"
     },
     {
       "item": "minecraft:baked_potato"

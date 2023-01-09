@@ -9,9 +9,9 @@
     "item": "lightmeals:baby_carrot",
     "count": 2
   },
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeBabyCarrot"
     }
   ]

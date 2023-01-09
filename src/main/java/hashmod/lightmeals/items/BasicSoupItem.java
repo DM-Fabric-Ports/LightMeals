@@ -1,6 +1,5 @@
 package hashmod.lightmeals.items;
 
-import hashmod.lightmeals.LightMeals;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -11,8 +10,9 @@ import net.minecraft.world.level.Level;
 
 public class BasicSoupItem extends Item {
     public BasicSoupItem(FoodProperties foodType) {
-        super(new Item.Properties().food(foodType).tab(LightMeals.ITEM_GROUP).stacksTo(1));
+        super(new Item.Properties().food(foodType).stacksTo(1));
     }
+
     @Override
     public int getUseDuration(ItemStack stack) {
         return super.getUseDuration(stack);
@@ -25,7 +25,7 @@ public class BasicSoupItem extends Item {
         if (itemStack.isEmpty()) {
             return new ItemStack(Items.BOWL);
         } else {
-            if (entity instanceof Player player && !((Player)entity).getAbilities().instabuild) {
+            if (entity instanceof Player player && !((Player) entity).getAbilities().instabuild) {
                 ItemStack itemstack = new ItemStack(Items.BOWL);
                 if (!player.getInventory().add(itemstack)) {
                     player.drop(itemstack, false);
@@ -34,15 +34,5 @@ public class BasicSoupItem extends Item {
 
             return itemStack;
         }
-    }
-
-    @Override
-    public boolean hasContainerItem(ItemStack stack){
-        return true;
-    }
-
-    @Override
-    public ItemStack getContainerItem(ItemStack itemStack){
-        return new ItemStack(Items.BOWL);
     }
 }

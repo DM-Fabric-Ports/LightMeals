@@ -5,7 +5,7 @@
       "item": "minecraft:chorus_fruit"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:sugar"
     },
     {
       "item": "minecraft:egg"

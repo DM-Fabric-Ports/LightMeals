@@ -12,6 +12,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.gameevent.GameEvent.Context;
+import net.minecraft.world.phys.Vec3;
 
 public class ChorusSoupItem extends BasicSoupItem {
     public ChorusSoupItem() {
@@ -27,19 +30,25 @@ public class ChorusSoupItem extends BasicSoupItem {
             double d2 = entityLiving.getZ();
 
             for (int i = 0; i < 16; ++i) {
-                double d3 = entityLiving.getX() + (entityLiving.getRandom().nextDouble() - 0.5D) * 16.0D;
-                double d4 = Mth.clamp(entityLiving.getY() + (double) (entityLiving.getRandom().nextInt(16) - 8), (double) worldIn.getMinBuildHeight(), (double) (worldIn.getMinBuildHeight() + ((ServerLevel) worldIn).getLogicalHeight() - 1));
-                double d5 = entityLiving.getZ() + (entityLiving.getRandom().nextDouble() - 0.5D) * 16.0D;
-                if (entityLiving.isPassenger()) {
+                double d3 = entityLiving.getX()
+                        + (entityLiving.getRandom().nextDouble() - 0.5D) * 16.0D;
+                double d4 = Mth.clamp(
+                        entityLiving.getY() + (double) (entityLiving.getRandom().nextInt(16) - 8),
+                        (double) worldIn.getMinBuildHeight(), (double) (worldIn.getMinBuildHeight()
+                                + ((ServerLevel) worldIn).getLogicalHeight() - 1));
+                double d5 = entityLiving.getZ()
+                        + (entityLiving.getRandom().nextDouble() - 0.5D) * 16.0D;
+                if (entityLiving.isPassenger())
                     entityLiving.stopRiding();
-                }
 
-                net.minecraftforge.event.entity.EntityTeleportEvent.ChorusFruit event = net.minecraftforge.event.ForgeEventFactory.onChorusFruitTeleport(entityLiving, d3, d4, d5);
-                if (event.isCanceled()) return item_stack;
-                if (entityLiving.randomTeleport(event.getTargetX(), event.getTargetY(), event.getTargetZ(), true)) {
-                    SoundEvent soundevent = entityLiving instanceof Fox ? SoundEvents.FOX_TELEPORT : SoundEvents.CHORUS_FRUIT_TELEPORT;
-                    worldIn.playSound((Player) null, d0, d1, d2, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    entityLiving.playSound(soundevent, 1.0F, 1.0F);
+                Vec3 vec3 = entityLiving.position();
+                if (entityLiving.randomTeleport(d3, d4, d5, true)) {
+                    worldIn.gameEvent(GameEvent.TELEPORT, vec3, Context.of(entityLiving));
+                    SoundEvent soundEvent = entityLiving instanceof Fox ? SoundEvents.FOX_TELEPORT
+                            : SoundEvents.CHORUS_FRUIT_TELEPORT;
+                    worldIn.playSound(null, d0, d1, d2, soundEvent, SoundSource.PLAYERS, 1.0F,
+                            1.0F);
+                    entityLiving.playSound(soundEvent, 1.0F, 1.0F);
                     break;
                 }
             }
@@ -48,10 +57,11 @@ public class ChorusSoupItem extends BasicSoupItem {
                 ((Player) entityLiving).getCooldowns().addCooldown(this, 20);
             }
         }
-        if (stack.isEmpty()) {
+        if (stack.isEmpty())
             return new ItemStack(Items.BOWL);
-        } else {
-            if (entityLiving instanceof Player player && !((Player) entityLiving).getAbilities().instabuild) {
+        else {
+            if (entityLiving instanceof Player player
+                    && !((Player) entityLiving).getAbilities().instabuild) {
                 ItemStack itemstack = new ItemStack(Items.BOWL);
                 if (!player.getInventory().add(itemstack)) {
                     player.drop(itemstack, false);

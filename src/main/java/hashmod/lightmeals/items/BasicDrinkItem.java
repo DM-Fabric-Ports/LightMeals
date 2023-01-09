@@ -1,6 +1,5 @@
 package hashmod.lightmeals.items;
 
-import hashmod.lightmeals.LightMeals;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
@@ -12,7 +11,7 @@ import net.minecraft.world.level.Level;
 
 public class BasicDrinkItem extends Item {
     public BasicDrinkItem(FoodProperties foodType) {
-        super(new Item.Properties().food(foodType).tab(LightMeals.ITEM_GROUP).stacksTo(1));
+        super(new Item.Properties().food(foodType).stacksTo(1));
     }
 
     @Override
@@ -41,15 +40,5 @@ public class BasicDrinkItem extends Item {
 
             return stack;
         }
-    }
-
-    @Override
-    public boolean hasContainerItem(ItemStack stack){
-        return true;
-    }
-
-    @Override
-    public ItemStack getContainerItem(ItemStack itemStack){
-        return new ItemStack(Items.GLASS_BOTTLE);
     }
 }

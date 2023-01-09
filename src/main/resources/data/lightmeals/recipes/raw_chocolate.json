@@ -8,7 +8,7 @@
       "item": "minecraft:cocoa_beans"
     },
     {
-      "type": "forge:nbt",
+      "type": "c:nbt",
       "item": "minecraft:potion",
       "nbt": "{Potion:'minecraft:water'}"
     }

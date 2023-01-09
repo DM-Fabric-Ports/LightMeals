@@ -10,7 +10,7 @@
       "item": "minecraft:apple"
     },
     "s": {
-      "item": "minecraft:sugar"
+      "tag": "c:sugar"
     }
   },
   "result": {

@@ -1,25 +1,34 @@
-# eclipse
-bin
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Quilt Loom
+remappedSrc/
+run/
+
+# Eclipse
 *.launch
-.settings
-.metadata
+
+# IntelliJ Idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Fleet
+.fleet/
+
+# Visual Studio Code
+.settings/
+.vscode/
+bin/
 .classpath
 .project
 
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
+# Eclipse JDT LS
+workspace/
 
-# gradle
-build
-.gradle
-
-# other
-eclipse
-run
-
-# Files from Forge MDK
-forge*changelog.txt
+# macOS
+*.DS_Store

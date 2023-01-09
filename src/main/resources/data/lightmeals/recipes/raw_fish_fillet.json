@@ -5,16 +5,16 @@
   ],
   "key": {
     "r": {
-      "tag": "forge:raw_fishes"
+      "tag": "c:raw_fishes"
     }
   },
   "result": {
     "item": "lightmeals:raw_fish_fillet",
     "count": 3
   },
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeRawFishFillet"
     }
   ]

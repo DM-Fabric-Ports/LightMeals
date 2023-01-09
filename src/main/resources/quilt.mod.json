@@ -1,0 +1,44 @@
+{
+	"schema_version": 1,
+	"minecraft": {
+		"environment": "*"
+	},
+	"quilt_loader": {
+		"group": "hashmod",
+		"id": "lightmeals",
+		"version": "${version}",
+		"metadata": {
+			"name": "Light Meals",
+			"description": "Add numerous foods within the vanilla system.",
+			"contributors": {
+				"Hashtag233": "Author",
+				"Ender_Ruier": "Author",
+				"DM Fabric Ports": "1.19.3 Quilt port"
+			},
+			"contact": {
+				"sources": "https://github.com/DM-Fabric-Ports/LightMeals"
+			},
+			"icon": "assets/lightmeals/light_meals_banner.png",
+			"license": "MIT"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": ["hashmod.lightmeals.LightMeals"]
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.18.0-"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=5.0.0-"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.19.3"
+			}
+		]
+	},
+	"access_widener": "lightmeals.accesswidener"
+}

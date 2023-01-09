@@ -1,14 +1,14 @@
 {
   "type": "minecraft:smoking",
   "ingredient": {
-    "tag": "forge:mushrooms"
+    "tag": "c:mushrooms"
   },
   "result": "lightmeals:cooked_mushroom",
   "experience": 0.15,
   "cookingtime": 100,
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeCookedMushroom"
     }
   ]

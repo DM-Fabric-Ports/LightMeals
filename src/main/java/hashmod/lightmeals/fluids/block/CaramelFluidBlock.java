@@ -6,7 +6,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 
 public class CaramelFluidBlock extends LiquidBlock {
 
-    public CaramelFluidBlock(java.util.function.Supplier<? extends FlowingFluid> supplier, Block.Properties props) {
-        super(supplier, props);
+    public CaramelFluidBlock(FlowingFluid flowingFluid, Block.Properties props) {
+        super(flowingFluid, props);
     }
 }

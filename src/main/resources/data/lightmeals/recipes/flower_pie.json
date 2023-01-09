@@ -5,7 +5,7 @@
       "tag": "minecraft:flowers"
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "c:sugar"
     },
     {
       "item": "minecraft:egg"

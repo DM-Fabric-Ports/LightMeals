@@ -79,7 +79,7 @@
   "item.lightmeals.chorus_fruit_juice": "Chorus Fruit Juice",
   "item.lightmeals.cooked_rabbit_foot": "Cooked Rabbit Foot",
   "item.lightmeals.glow_ink_soup": "Glow Ink Soup",
-  "itemGroup.lightmeals": "Light Meals",
+  "itemGroup.lightmeals.lightmeals": "Light Meals",
   "fluid.lightmeals.caramel": "Caramel",
   "item.lightmeals.caramel_bucket": "Caramel Bucket",
   "material.tconstruct.caramel": "Caramel"

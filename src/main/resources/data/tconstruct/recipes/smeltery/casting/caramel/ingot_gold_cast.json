@@ -4,7 +4,7 @@
     "tag": "tconstruct:casts/multi_use/ingot"
   },
   "fluid": {
-    "tag": "forge:caramel",
+    "tag": "c:caramel",
     "amount": 90
   },
   "result": "lightmeals:caramel_ingot",

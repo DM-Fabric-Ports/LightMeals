@@ -30,6 +30,7 @@ public final class ConfigHelper {
         LightMealsConfig.disableRecipeSmallCake = ConfigHolder.COMMON.disableRecipeSmallCake.get();
     }
 
+    @SuppressWarnings("unused")
     private static void setValueAndSave(final ModConfig modConfig, final String path, final Object newValue) {
         modConfig.getConfigData().set(path, newValue);
         modConfig.save();

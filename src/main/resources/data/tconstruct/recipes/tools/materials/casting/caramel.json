@@ -1,7 +1,7 @@
 {
   "type": "tconstruct:material_fluid",
   "fluid": {
-    "tag": "forge:caramel",
+    "tag": "c:caramel",
     "amount": 90
   },
   "temperature": 160,

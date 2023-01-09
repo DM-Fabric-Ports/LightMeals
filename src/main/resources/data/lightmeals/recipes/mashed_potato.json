@@ -8,9 +8,9 @@
   "result": {
     "item": "lightmeals:mashed_potato"
   },
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeMashedPotato"
     }
   ]

@@ -9,9 +9,9 @@
     "item": "lightmeals:bacon",
     "count": 2
   },
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeBacon"
     }
   ]

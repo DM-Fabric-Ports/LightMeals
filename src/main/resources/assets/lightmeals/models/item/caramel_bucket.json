@@ -1,5 +1,3 @@
 {
-  "parent": "forge:item/bucket_drip",
-  "loader": "forge:bucket",
-  "fluid": "lightmeals:caramel"
+  "parent": "item/generated"
 }

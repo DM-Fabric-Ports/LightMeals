@@ -1,5 +1,6 @@
 package hashmod.lightmeals.blocks;
 
+import org.jetbrains.annotations.NotNull;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -13,17 +14,16 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-import javax.annotation.Nonnull;
-
 public class HoneyCakeBlock extends CakeBlock {
     public HoneyCakeBlock(BlockBehaviour.Properties properties) {
         super(properties);
     }
 
-    public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player, InteractionHand handIn, BlockHitResult hit) {
+    public InteractionResult use(BlockState state, Level worldIn, BlockPos pos, Player player,
+            InteractionHand handIn, BlockHitResult hit) {
         if (worldIn.isClientSide) {
             ItemStack itemstack = player.getItemInHand(handIn);
-            if (this.eat(worldIn, pos, state, player).consumesAction()) {
+            if (eat(worldIn, pos, state, player).consumesAction()) {
                 return InteractionResult.SUCCESS;
             }
 
@@ -32,10 +32,11 @@ public class HoneyCakeBlock extends CakeBlock {
             }
         }
 
-        return this.eat(worldIn, pos, state, player);
+        return eat(worldIn, pos, state, player);
     }
 
-    public static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state, @Nonnull Player player) {
+    public static InteractionResult eat(LevelAccessor world, BlockPos pos, BlockState state,
+            @NotNull Player player) {
         if (!player.canEat(false)) {
             return InteractionResult.PASS;
         } else {

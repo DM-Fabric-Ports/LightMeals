@@ -9,9 +9,9 @@
     "item": "lightmeals:small_cake",
     "count": 7
   },
-  "conditions": [
+  "fabric:load_conditions": [
     {
-      "type": "lightmeals:config_enabled",
+      "condition": "lightmeals:config_enabled",
       "config_key": "disableRecipeSmallCake"
     }
   ]

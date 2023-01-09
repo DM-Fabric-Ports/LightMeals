@@ -7,7 +7,7 @@
   ],
   "key": {
     "s": {
-      "item": "minecraft:sugar"
+      "tag": "c:sugar"
     },
     "m": {
       "item": "minecraft:milk_bucket"

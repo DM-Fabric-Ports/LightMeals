@@ -2,12 +2,18 @@ package hashmod.lightmeals.registry;
 
 import hashmod.lightmeals.LightMealsUtils;
 import hashmod.lightmeals.fluids.CaramelFluid;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.material.Fluid;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModFluids {
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, LightMealsUtils.MODID);
 
-    public static final CaramelFluid CARAMEL_FLUID = new CaramelFluid();
+	public static <V extends Fluid> V register(String name, V fluid) {
+		return Registry.register(BuiltInRegistries.FLUID, LightMealsUtils.asResource(name), fluid);
+	}
+
+	public static void register() {
+		CaramelFluid.load();
+	}
+
 }
