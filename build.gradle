@@ -74,5 +74,5 @@ publishing {
 }
 
 loom {
-	accessWidenerPath = file("src/main/resources/lightmeals.accesswidener")
+    accessWidenerPath = file("src/main/resources/lightmeals.accesswidener")
 }
